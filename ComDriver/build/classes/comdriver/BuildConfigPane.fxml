@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml" fx:controller="comdriver.BuildConfigPaneController">
+  <children>
+    <GridPane layoutX="34.0" layoutY="100.0" prefWidth="280.0">
+      <children>
+        <Label text="Plc Name(I.P.)" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="Pull Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="Interval:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Unit of Time:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="plcName" prefWidth="100.00009999999747" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <ComboBox id="pullTypeCombo" fx:id="pullType" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <items>
+            <FXCollections fx:factory="observableArrayList" />
+          </items>
+        </ComboBox>
+        <TextField fx:id="interval" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <ComboBox id="unitOfTimeCombo" fx:id="unitOfTime" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <items>
+            <FXCollections fx:factory="observableArrayList" />
+          </items>
+        </ComboBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Label layoutX="273.0" layoutY="51.0" text="Configure Pull Type" textFill="#cc0000">
+      <font>
+        <Font name="System Bold" size="15.0" />
+      </font>
+    </Label>
+    <Pane layoutX="14.0" layoutY="242.0" prefHeight="444.0" prefWidth="672.0">
+      <children>
+        <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#addReadEvent" text="Add Read" />
+        <Button layoutX="130.0" layoutY="15.0" mnemonicParsing="false" onAction="#addWriteEvent" text="Add Write" />
+        <ListView fx:id="eventList" layoutX="16.0" layoutY="70.0" prefHeight="360.0" prefWidth="641.0" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
